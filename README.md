@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://i.imgur.com/Clzj7Xs.png" alt="osTicket logo"/>
+<img src="https://imgur.com/N4r9nQ7.png" alt="osTicket logo"/>
 </p>
 
 <h1>osTicket - Prerequisites and Installation</h1>
@@ -57,7 +57,7 @@ you will lose connection to your network and the router should be blinking on th
 
 <h2>Connecting the Fortigate and configuring it</h2>
 <p>
-<img src="https://imgur.com/a/jCPNT1Y#HgsVFzb.jpg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/Q4MUebh.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 We are going to be doing a lot of this configuration through the CLI of the FortiGate. It is 100% possible to do configurations through WebGUI depending if your FortiGate has an IP set to its LAN interface (aka the hardware switch)
 and HTTPS traffic is allowed to it. Mine were not set like this already, so I will show you how to do it. Lets start off by connecting the WAN1 port on your Fortigate to the LAN2 port on your FIOS router. (It will be one less step for you if you connect wan1
@@ -82,14 +82,14 @@ Look for the one that shows hard-switch at the end. That is configurable interfa
 need to enter the following commands I give you. This makes it so that devices connected to this switch will actually be able to communicate out to the internet and with each other.
 Here are the commands
 </p>
-1. config system interface
-2. edit internal
-3. set mode static
-4. set ip 192.168.1.99 255.255.255.0  
-5. set role lan 
-6. set allowaccess https ssh ping 
-7. next 
-8. end
+- config system interface
+- edit internal
+- set mode static
+- set ip 192.168.1.99 255.255.255.0  
+- set role lan 
+- set allowaccess https ssh ping 
+- next 
+- end
 <br />
 
 <p>
@@ -127,7 +127,7 @@ Now anything you connect to the network will recieve an IP and be able to commun
 <h2> Connecting our switch and access point.</h2>
 
 <p>
-<img src="https://imgur.com/a/jCPNT1Y#KIwkfZN.jpg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/ncndAUX.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 You could stop right here, but to truely have an at home network you should configure wifi. We will be doing 
