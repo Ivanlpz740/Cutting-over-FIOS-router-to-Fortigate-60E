@@ -2,7 +2,7 @@
 <img src="https://imgur.com/N4r9nQ7.png" alt="osTicket logo"/>
 </p>
 
-<h1>osTicket - Prerequisites and Installation</h1>
+<h1>Verizon FIOS router cutover to FortiGate 60e </h1>
 In this tutorial, I will go over cutting over a FIOS Verizon router to a Fortigate 60e. I would suggest if you are going to do this, to also get a switch (managed or unmanaged), and a wireless access point.
 
 <h2>Video Demonstration</h2>
