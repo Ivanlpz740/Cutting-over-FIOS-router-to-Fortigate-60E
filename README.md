@@ -57,7 +57,7 @@ you will lose connection to your network and the router should be blinking on th
 
 <h2>Connecting the Fortigate and configuring it</h2>
 <p>
-  <img src="https://imgur.com/a/jCPNT1Y#HgsVFzb.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/a/jCPNT1Y#HgsVFzb.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 We are going to be doing a lot of this configuration through the CLI of the FortiGate. It is 100% possible to do configurations through WebGUI depending if your FortiGate has an IP set to its LAN interface (aka the hardware switch)
 and HTTPS traffic is allowed to it. Mine were not set like this already, so I will show you how to do it. Lets start off by connecting the WAN1 port on your Fortigate to the LAN2 port on your FIOS router. (It will be one less step for you if you connect wan1
@@ -99,6 +99,7 @@ Here are the commands
 now your devices should be able to access the internet. That is, as long as they get an IP. We will need to set up DHCP
 this can be done with the following commands
   <p/>
+    
 1. config system dhcp server
 2. edit 1
 3. set interface internal
@@ -114,6 +115,7 @@ this can be done with the following commands
 13. set dns-service default
 14. next
 15. end
+16. 
 <p>
 Please not that you can set your own IP scope and lease-time if you are comfortable going off on you own.
 (if you run show system dhcp server, your results of that command should appear like the image above)
