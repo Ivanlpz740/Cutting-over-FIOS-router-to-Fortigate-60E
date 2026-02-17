@@ -57,7 +57,7 @@ you will lose connection to your network and the router should be blinking on th
 
 <h2>Connecting the Fortigate and configuring it</h2>
 <p>
-<img src="https://imgur.com/a/jCPNT1Y#HgsVFzb.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/a/jCPNT1Y#HgsVFzb.jpg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 We are going to be doing a lot of this configuration through the CLI of the FortiGate. It is 100% possible to do configurations through WebGUI depending if your FortiGate has an IP set to its LAN interface (aka the hardware switch)
 and HTTPS traffic is allowed to it. Mine were not set like this already, so I will show you how to do it. Lets start off by connecting the WAN1 port on your Fortigate to the LAN2 port on your FIOS router. (It will be one less step for you if you connect wan1
@@ -100,22 +100,22 @@ now your devices should be able to access the internet. That is, as long as they
 this can be done with the following commands
   <p/>
     
-1. config system dhcp server
-2. edit 1
-3. set interface internal
-4. set lease-time 86400
-5. config ip-range
-6. edit 1
-7. set start-ip 192.168.1.10
-8. set end-ip 192.168.1.200
-9. next
-10. end
-11. set netmask 255.255.255.0
-12. set default-gateway 192.168.1.99
-13. set dns-service default
-14. next
-15. end
-16. 
+- config system dhcp server
+- edit 1
+- set interface internal
+- set lease-time 86400
+- config ip-range
+- edit 1
+- set start-ip 192.168.1.10
+- set end-ip 192.168.1.200
+- next
+- end
+- set netmask 255.255.255.0
+- set default-gateway 192.168.1.99
+- set dns-service default
+- next
+- end
+- 
 <p>
 Please not that you can set your own IP scope and lease-time if you are comfortable going off on you own.
 (if you run show system dhcp server, your results of that command should appear like the image above)
@@ -127,7 +127,7 @@ Now anything you connect to the network will recieve an IP and be able to commun
 <h2> Connecting our switch and access point.</h2>
 
 <p>
-<img src="https://imgur.com/a/jCPNT1Y#KIwkfZN.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/a/jCPNT1Y#KIwkfZN.jpg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 You could stop right here, but to truely have an at home network you should configure wifi. We will be doing 
