@@ -73,21 +73,14 @@ show system interface ?
 <br />
 
 <p>
-<img src="https://i.imgur.com/ZaBAw1r.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/6v3UM4n.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 Look for the one that shows hard-switch at the end. That is configurable interface for the builtin switch on our FortiGate. In my previous image you can see that I already have 192.168.1.99. If you do too, that is great. If not, you will
 need to enter the following commands I give you. This makes it so that devices connected to this switch will actually be able to communicate out to the internet and with each other.
 Here are the commands
-
-config system interface
-edit internal
-set mode static
-set ip 192.168.1.99 255.255.255.0
-set role lan
-set allowaccess https ssh ping
-next
-end
+</p>
+config system interface - edit internal - set mode static - set ip 192.168.1.99 255.255.255.0 - set role lan - set allowaccess https ssh ping - next - end
 </p>
 <br />
 
