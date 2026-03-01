@@ -103,7 +103,7 @@ Have a basic understanding of networking principles. These instructions explain 
 
 <p> <img src="https://imgur.com/RhRP9Ns.png" height="80%" width="80%" alt="Disk Sanitization Steps"/> </p> <p> Now we need to configure the wireless access point. The easiest way is to use a computer connected to the network via Ethernet. On your AP, find the label with the model number, serial number, and MAC address. Note the MAC address.Return to your console session and run: </p>
 
-- get system arp
+- <code>get system arp</code>
 
 <p> This command displays the FortiGate’s ARP table, which maps IP addresses to MAC addresses. Find the entry matching your AP’s MAC address and write down the IP address assigned to it.(You should only see two or three entries unless more devices are connected.) </p> <br />
 
