@@ -43,55 +43,55 @@ Have a basic understanding of networking principles. These instructions explain 
 
 <p> <img src="https://imgur.com/6v3UM4n.png" height="80%" width="80%" alt="Disk Sanitization Steps"/> </p> <p> Look for the interface that ends with <code>hard-switch</code>. That is the configurable interface for the built‑in switch. In the screenshot, mine already has 192.168.1.99 assigned. If yours does not, enter the following commands. This ensures devices connected to the switch can communicate with each other and reach the internet.Here are the commands: </p>
 
-- config system interface
+- <code>config system interface</code>
 
-- edit internal
+- <code>edit internal</code>
 
-- set mode static
+- <code>set mode static</code>
 
-- set ip 192.168.1.99 255.255.255.0
+- <code>set ip 192.168.1.99 255.255.255.0</code>
 
-- set role lan
+- <code>set role lan</code>
 
-- set allowaccess https ssh ping
+- <code>set allowaccess https ssh ping</code>
 
-- next
+- <code>next</code>
 
-- end
+- <code>end</code>
 
 <br />
 
 <p> <img src="https://imgur.com/mKFqFL4.png"/> </p> <p> Now your devices should be able to access the internet, as long as they receive an IP address. To handle that, we need to set up DHCP. Use the following commands: </p>
 
-- config system dhcp server
+- <code>config system dhcp server</code>
 
-- edit 1
+- <code>edit 1</code>
 
-- set interface internal
+- <code>set interface internal</code>
 
-- set lease-time 86400
+- <code>set lease-time 86400</code>
 
-- config ip-range
+- <code>config ip-range</code>
 
-- edit 1
+- <code>edit 1</code>
 
-- set start-ip 192.168.1.10
+- <code>set start-ip 192.168.1.10</code>
 
-- set end-ip 192.168.1.200
+- <code>set end-ip 192.168.1.200</code>
 
-- next
+- <code>next</code>
 
-- end
+- <code>end</code>
 
-- set netmask 255.255.255.0
+- <code>set netmask 255.255.255.0</code>
 
-- set default-gateway 192.168.1.99
+- <code>set default-gateway 192.168.1.99</code>
 
-- set dns-service default
+- <code>set dns-service default</code>
 
-- next
+- <code>next</code>
 
-- end
+- <code>end</code>
 
 <p> You can adjust the IP scope and lease time if you prefer.If you run <code>show system dhcp server</code>, your configuration should match the screenshot above.Now any device you connect to the network will receive an IP address and be able to communicate locally and access the internet. </p> <br />
 
@@ -99,9 +99,9 @@ Have a basic understanding of networking principles. These instructions explain 
 
 <p> <img src="https://imgur.com/ncndAUX.png" height="80%" width="80%" alt="Disk Sanitization Steps"/> </p> <p> You could stop here, but to have a complete home network, you should configure Wi‑Fi. We will do this using a wireless access point. There are two ways to deploy an AP, but I will use a PoE switch to power mine through Ethernet.Plug your PoE‑capable switch into a wall outlet, then run an Ethernet cable from the switch to any port (1–7) on the FortiGate. </p> <br />
 
-<p> <img src="https://i.imgur.com/okiiOZv.png" height="80%" width="80%" alt="Disk Sanitization Steps"/> </p> <p> After connecting and powering on the switch, choose a good location for your AP—ideally somewhere with minimal interference. Avoid placing it near the kitchen, since microwaves operate at 2.4 GHz.Mount the AP, then run an Ethernet cable from the switch to the AP. Make sure to use a PoE‑capable cable (mine is Cat 6). Check your AP’s manual to understand the indicator lights. </p> <br />
+<p> <img src="https://imgur.com/BxfHHZK.png" height="80%" width="80%" alt="Disk Sanitization Steps"/> </p> <p> After connecting and powering on the switch, choose a good location for your AP—ideally somewhere with minimal interference. Avoid placing it near the kitchen, since microwaves operate at 2.4 GHz.Mount the AP, then run an Ethernet cable from the switch to the AP. Make sure to use a PoE‑capable cable (mine is Cat 6). Check your AP’s manual to understand the indicator lights. </p> <br />
 
-<p> <img src="https://imgur.com/RhRP9Ns.png" height="80%" width="80%" alt="Disk Sanitization Steps"/> </p> <p> Now we need to configure the wireless access point. The easiest way is to use a computer connected to the network via Ethernet.On your AP, find the label with the model number, serial number, and MAC address. Note the MAC address.Return to your console session and run: </p>
+<p> <img src="https://imgur.com/RhRP9Ns.png" height="80%" width="80%" alt="Disk Sanitization Steps"/> </p> <p> Now we need to configure the wireless access point. The easiest way is to use a computer connected to the network via Ethernet. On your AP, find the label with the model number, serial number, and MAC address. Note the MAC address.Return to your console session and run: </p>
 
 - get system arp
 
